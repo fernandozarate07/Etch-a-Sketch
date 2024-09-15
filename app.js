@@ -14,4 +14,15 @@ const btnColorGrey = document.querySelector('.colorGrey');
 const btnColorRainbow = document.querySelector('.colorRainbow');
 const btnEraser = document.querySelector('.eraser');
 
-const inputValue = document.querySelector('.inputRangeDiv_value');
+const inputRange = document.querySelector('.inputRangeDiv_input');
+const inputValueDiv = document.querySelector('.inputRangeDiv_value');
+
+// InputFunctionally
+
+let inputPara = document.createElement('p');
+inputPara.textContent = '(16 x 16) px';
+inputValueDiv.appendChild(inputPara);
+
+inputRange.addEventListener('change', () =>{
+    inputPara.textContent = `(${inputRange.value} X ${inputRange.value}) px`;
+})
