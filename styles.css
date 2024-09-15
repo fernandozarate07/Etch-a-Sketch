@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-red: #FF0000;
+    --color-blue: #0000FF;
+    --color-green: #00FF00;
+    --color-yellow: #FFFF00;
+    --color-aqua: #00FFFF;
+    --color-magenta: #FF00FF;
+    --color-orange: #FFA500;
+    --color-grey: #808080;
+    --color-slate-blue: #6A5ACD;    
+    --color-rainbow: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+button{
+    cursor: pointer;
+}
+/* Window */
+
+#window{
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Title */
+
+#title{
+    text-align: center;
+    padding: 20px;
+}
+
+/* DrawControlContainer */
+
+#drawControlContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.inputRangeDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#buttomControlDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+#buttomControlDiv button{
+    width: 100px;
+    height: 40px;
+
+}
+
+/* DrawContainer */
+
+#drawContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drawDiv{
+    width: 900px;
+    height: 450px;
+    background-color: var(--color-grey);
+}
+
+/* ColorTools */
+#colorTools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.colorDiv{
+    max-width: 300px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.color{
+    width: 30px;
+    height: 30px;
+}
+.eraser{
+    width: 90px;
+    height: 90px;
+}
+.eraser i{
+    font-size: 2rem;
+}
