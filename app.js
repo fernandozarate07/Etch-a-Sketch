@@ -1,5 +1,3 @@
-// const { createElement } = require("react");
-
 const btnCreate = document.querySelector('.dccButtonCreate');
 const btnClear = document.querySelector('.dccButtonClear');
 
@@ -18,28 +16,50 @@ const btnEraser = document.querySelector('.eraser');
 
 const inputRange = document.querySelector('.inputRangeDiv_input');
 const inputValueDiv = document.querySelector('.inputRangeDiv_value');
-
 const drawDiv = document.querySelector('.drawDiv');
 
-// Input Functionality
+// CreatePixelFunctionality
 
-let inputPara = document.createElement('p');
-inputPara.textContent = '(16 x 16) px';
-inputValueDiv.appendChild(inputPara);
-console.log(inputRange.value);
+const anchors = [16, 25, 36, 49, 64, 81, 100];
+const anchoContainer = 500;
+const altoContainer = 500;
 
-inputRange.addEventListener('change', () =>{
-    inputPara.textContent = `(${inputRange.value} X ${inputRange.value}) px`;
-})
+    // setAnchoredValue gestiona el inputRange para que solo pueda moverse por los valores de anchor
 
-// CreatePixel Functionality
-btnCreate.addEventListener('click', () => {
-    let inputValue = inputRange.value;
+function setAnchoredValue(value) {
+    const closest = anchors.reduce((prev, curr) =>
+        Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
+    );
+    inputRange.value = closest;
+    inputValueDiv.textContent = `${closest}px`;
+    updatePixelSize();
+}
+
+function updatePixelSize() {
+    const inputValue = inputRange.value;
     drawDiv.innerHTML = '';
 
-    for (let i = 1; i <= inputValue; i++) {
-        let pixel = document.createElement('div');
+    // xyPixel calcula el tamaño final de cada pixel
+
+    const xyPixel = (() => {
+        const areaContainer = anchoContainer * altoContainer;
+        const areaPixel = areaContainer / inputValue;
+        return Math.floor(Math.sqrt(areaPixel));
+    })();
+
+    // for crea divs (pixeles) y los añade a drawDiv
+
+    for (let i = 0; i < inputValue; i++) {
+        const pixel = document.createElement('div');
         pixel.classList.add('pixelStyle');
+        pixel.style.width = `${xyPixel}px`;
+        pixel.style.height = `${xyPixel}px`;
         drawDiv.appendChild(pixel);
     }
-});
+}
+
+// Este es el evento
+
+inputRange.addEventListener('change', () => setAnchoredValue(inputRange.value));
+
+setAnchoredValue(inputRange.value);
