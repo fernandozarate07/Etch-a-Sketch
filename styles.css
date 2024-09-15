@@ -95,10 +95,8 @@ button{
 
     border: 1px solid var(--color-black);
 }
-.pixelStyle{
-    background-color: var(--color-magenta); 
-    border: 0.1px solid var(--color-white);
-}
+/* .pixelStyle{
+} */
 
 #colorTools{
     display: flex;
