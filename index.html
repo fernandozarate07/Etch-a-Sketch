@@ -14,6 +14,7 @@
         <h1 id="title">Etch a Sketch</h1>
         <!-- DrawControlContainer -->
         <div id="drawControlContainer">
+            <!-- InputRangeDiv -->
             <div class="inputRangeDiv">
                 <h3 class="inputRangeDiv_h">Choose the number of pixels</h3>
                 <input type='range'class="inputRangeDiv_input" min="16" max="100" value="16">
@@ -23,32 +24,35 @@
                 <button class="dccButtonCreate">Create</button>
                 <button class="dccButtonClear">Clear</button>
             </div>
+            <!-- ColorTools -->
+            <div id="colorTools">
+                <div class="colorDiv">
+                    <button class="color colorBlack"></button>
+                    <button class="color colorWhite"></button>
+                    <button class="color colorRed"></button>
+                    <button class="color colorBlue"></button>
+                    <button class="color colorGreen"></button>
+                    <button class="color colorYellow"></button>
+                    <button class="color colorAqua"></button>
+                    <button class="color colorMagenta"></button>
+                    <button class="color colorOrange"></button>
+                    <button class="color colorGrey"></button>
+                    <button class="color colorSlateBlue"></button>
+                    <button class="color colorRainbow"></button>
+                </div>
+                <button class="eraser">
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+            </div>
         </div>
         <!-- DrawContainer -->
         <div id="drawContainer">
             <div class="drawDiv"></div>
-        </div>
-        <!-- ColorTools -->
-        <div id="colorTools">
-            <div class="colorDiv">
-                <button class="color colorBlack"></button>
-                <button class="color colorWhite"></button>
-                <button class="color colorRed"></button>
-                <button class="color colorBlue"></button>
-                <button class="color colorGreen"></button>
-                <button class="color colorYellow"></button>
-                <button class="color colorAqua"></button>
-                <button class="color colorMagenta"></button>
-                <button class="color colorOrange"></button>
-                <button class="color colorGrey"></button>
-                <button class="color colorSlateBlue"></button>
-                <button class="color colorRainbow"></button>
-            </div>
-            <button class="eraser">
-                <i class="fa-solid fa-eraser"></i>
-            </button>
-        </div>
-    </section>
+                    <!-- ColorTools -->
+
+    <footer id="footer">
+        <p>© 2024. For the OdinProyect</p>
+    </footer>
 <!-- Script -->
  <script src="app.js"></script>
 </body>
