@@ -1,5 +1,7 @@
-const btnCreate = document.querySelector('#buttomControlDiv .dccButtonCreate');
-const btnClear = document.querySelector('#buttomControlDiv .dccButtonClear');
+// const { createElement } = require("react");
+
+const btnCreate = document.querySelector('.dccButtonCreate');
+const btnClear = document.querySelector('.dccButtonClear');
 
 const btnColorBlack = document.querySelector('.colorBlack');
 const btnColorWhite = document.querySelector('.colorWhite');
@@ -17,12 +19,27 @@ const btnEraser = document.querySelector('.eraser');
 const inputRange = document.querySelector('.inputRangeDiv_input');
 const inputValueDiv = document.querySelector('.inputRangeDiv_value');
 
-// InputFunctionally
+const drawDiv = document.querySelector('.drawDiv');
+
+// Input Functionality
 
 let inputPara = document.createElement('p');
 inputPara.textContent = '(16 x 16) px';
 inputValueDiv.appendChild(inputPara);
+console.log(inputRange.value);
 
 inputRange.addEventListener('change', () =>{
     inputPara.textContent = `(${inputRange.value} X ${inputRange.value}) px`;
 })
+
+// CreatePixel Functionality
+btnCreate.addEventListener('click', () => {
+    let inputValue = inputRange.value;
+    drawDiv.innerHTML = '';
+
+    for (let i = 1; i <= inputValue; i++) {
+        let pixel = document.createElement('div');
+        pixel.classList.add('pixelStyle');
+        drawDiv.appendChild(pixel);
+    }
+});
