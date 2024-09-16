@@ -12,9 +12,11 @@ const colorButtons = {
     magenta: document.querySelector('.colorMagenta'),
     orange: document.querySelector('.colorOrange'),
     grey: document.querySelector('.colorGrey'),
+    slateBlue: document.querySelector('.colorSlateBlue'),
     rainbow: document.querySelector('.colorRainbow'),
     eraser: document.querySelector('.eraser')
 };
+
 
 const inputRange = document.querySelector('.inputRangeDiv_input');
 const inputValueDiv = document.querySelector('.inputRangeDiv_value');
@@ -59,3 +61,18 @@ inputRange.addEventListener('input', () => {
 btnCreate.addEventListener('click', createPixel);
 
 setAnchoredValue(inputRange.value);
+
+// GetColorFunctionality
+
+const indicadorDiv = document.querySelector('.indicador');
+
+let colorVar = 'var(--color-black)';
+
+for (let color in colorButtons) {
+    colorButtons[color].addEventListener('click', function() {
+        colorVar= this.dataset.color;
+        indicadorDiv.style.background = colorVar;
+    });
+}
+
+
