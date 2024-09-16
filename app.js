@@ -17,7 +17,6 @@ const colorButtons = {
     eraser: document.querySelector('.eraser')
 };
 
-
 const inputRange = document.querySelector('.inputRangeDiv_input');
 const inputValueDiv = document.querySelector('.inputRangeDiv_value');
 const drawDiv = document.querySelector('.drawDiv');
@@ -41,7 +40,7 @@ const createPixel = () => {
     const inputValue = setAnchoredValue(inputRange.value);
     drawDiv.innerHTML = '';
     
-    // updatePixelSize
+    // Update pixel size
     const xyPixel = Math.sqrt((anchoContainer * altoContainer) / inputValue);
     
     for (let i = 0; i < inputValue; i++) {
@@ -50,8 +49,19 @@ const createPixel = () => {
         pixel.style.width = `${xyPixel}px`;
         pixel.style.height = `${xyPixel}px`;
         drawDiv.appendChild(pixel);
+
+        // Add event listeners for painting
+        pixel.addEventListener('mousedown', function() {
+            isDrawing = true;
+            this.style.backgroundColor = colorVar;
+        });
+
+        pixel.addEventListener('mousemove', function() {
+            if (isDrawing) {
+                this.style.backgroundColor = colorVar;
+            }
+        });
     }
-    
 };
 
 inputRange.addEventListener('input', () => {
@@ -70,9 +80,35 @@ let colorVar = 'var(--color-black)';
 
 for (let color in colorButtons) {
     colorButtons[color].addEventListener('click', function() {
-        colorVar= this.dataset.color;
+        colorVar = this.dataset.color;
         indicadorDiv.style.background = colorVar;
     });
 }
 
+// ClearFunctionality
+btnClear.addEventListener('click', ()=>{
+    const pixels = drawDiv.querySelectorAll('.pixelStyle');
+    pixels.forEach(pixel => {
+        pixel.style.backgroundColor = 'var(--transparent)';
+    });
+});
 
+// Manage drawing state
+let isDrawing = false;
+
+document.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
+
+drawDiv.addEventListener('mousedown', (event) => {
+    if (event.target.classList.contains('pixelStyle')) {
+        isDrawing = true;
+        event.target.style.backgroundColor = colorVar;
+    }
+});
+
+drawDiv.addEventListener('mousemove', (event) => {
+    if (isDrawing && event.target.classList.contains('pixelStyle')) {
+        event.target.style.backgroundColor = colorVar;
+    }
+});

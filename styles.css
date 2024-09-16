@@ -16,6 +16,7 @@
     --color-grey: #808080;
     --color-slate-blue: #6A5ACD;
     --color-rainbow: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    --color-transparent: transparent;
 }
 h1 {
     font-family: 'Press Start 2P', cursive;
