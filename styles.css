@@ -38,6 +38,8 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    background-color: #F5F5F5;
 }
 
 /* Title */
@@ -73,9 +75,17 @@ button{
 #buttomControlDiv button{
     width: 85px;
     height: 85px;
+    border: transparent;
+}
+.dccButtonCreate{
+    background-color: #2ECC71;
+    color: var(--color-white);
+}
+.dccButtonClear{
+    background-color: #E74C3C;
+    color: var(--color-white);
 
 }
-
 /* ColorTools */
 
 #colorTools{
@@ -84,11 +94,14 @@ button{
     align-items: center;
 }
 .indicadorContainer{
+    width: 85px;
+    height: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border: 1px solid var(--color-black);
+    border: 2px solid #BDC3C7;
+    background-color: var(--color-white);
 }
 
 .indicador{
@@ -110,7 +123,7 @@ button{
     width: 40px;
     height: 40px;
 
-    border: 3px solid gainsboro;
+    border: 2px solid #BDC3C7;
 }
 /* colors */
 .colorBlack{
@@ -151,13 +164,15 @@ button{
     background: var(--color-rainbow);
 }
 
-.indicadorContainer,
 .eraser{
     width: 85px;
     height: 85px;
+    background-color: #BDC3C7;
+    border: transparent;
 }
 .eraser i{
     font-size: 2rem;
+    color: var(--color-white);
 }
 
 /* DrawContainer */
@@ -179,10 +194,11 @@ button{
     align-items: center;
     flex-wrap: wrap;
 
-    border: 1px solid var(--color-black);
+    border: 1px solid #BDC3C7;
 }
 .pixelStyle{
-    border: .5px solid gainsboro;
+    border: .5px solid #BDC3C7;
+    
 }
 
 /* Footer */
@@ -192,9 +208,20 @@ button{
     top: 50%;
     left: 5%;
     transform: translate(-50%, -50%); 
+
+    height: 100vh;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #34495E;
 }
 #footer p{
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 1.2rem;
+
+    color: var(--color-white);
 }

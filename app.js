@@ -21,7 +21,7 @@ const inputRange = document.querySelector('.inputRangeDiv_input');
 const inputValueDiv = document.querySelector('.inputRangeDiv_value');
 const drawDiv = document.querySelector('.drawDiv');
 
-// CreatePixelFunctionality
+// Funcionalidad para crear píxeles
 
 const anchors = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961];
 const anchoContainer = 500;
@@ -40,7 +40,7 @@ const createPixel = () => {
     const inputValue = setAnchoredValue(inputRange.value);
     drawDiv.innerHTML = '';
     
-    // Update pixel size
+    // Actualiza el tamaño de los píxeles
     const xyPixel = Math.sqrt((anchoContainer * altoContainer) / inputValue);
     
     for (let i = 0; i < inputValue; i++) {
@@ -50,15 +50,15 @@ const createPixel = () => {
         pixel.style.height = `${xyPixel}px`;
         drawDiv.appendChild(pixel);
 
-        // Add event listeners for painting
+        // Agrega eventos para pintar
         pixel.addEventListener('mousedown', function() {
             isDrawing = true;
-            this.style.backgroundColor = colorVar;
+            this.style.background = colorVar;
         });
 
         pixel.addEventListener('mousemove', function() {
             if (isDrawing) {
-                this.style.backgroundColor = colorVar;
+                this.style.background = colorVar;
             }
         });
     }
@@ -72,7 +72,7 @@ btnCreate.addEventListener('click', createPixel);
 
 setAnchoredValue(inputRange.value);
 
-// GetColorFunctionality
+// Funcionalidad para obtener el color
 
 const indicadorDiv = document.querySelector('.indicador');
 
@@ -85,7 +85,8 @@ for (let color in colorButtons) {
     });
 }
 
-// ClearFunctionality
+// Funcionalidad para limpiar
+
 btnClear.addEventListener('click', ()=>{
     const pixels = drawDiv.querySelectorAll('.pixelStyle');
     pixels.forEach(pixel => {
@@ -93,7 +94,7 @@ btnClear.addEventListener('click', ()=>{
     });
 });
 
-// Manage drawing state
+// Gestionar el estado de dibujo
 let isDrawing = false;
 
 document.addEventListener('mouseup', () => {
