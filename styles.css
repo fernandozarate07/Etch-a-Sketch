@@ -75,33 +75,26 @@ button{
 
 }
 
-/* DrawContainer */
-
-#drawContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.drawDiv{
-    width: 500px;
-    height: 500px;
-    box-sizing: content-box;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    border: 1px solid var(--color-black);
-}
-/* .pixelStyle{
-} */
+/* ColorTools */
 
 #colorTools{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.indicadorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--color-black);
+}
+
+.indicador{
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-black);
+    
 }
 .colorDiv{
     max-width: 300px;
@@ -157,13 +150,38 @@ button{
     background: var(--color-rainbow);
 }
 
-
+.indicadorContainer,
 .eraser{
     width: 85px;
     height: 85px;
 }
 .eraser i{
     font-size: 2rem;
+}
+
+/* DrawContainer */
+
+#drawContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.drawDiv{
+    width: 500px;
+    height: 500px;
+    box-sizing: content-box;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    border: 1px solid var(--color-black);
+}
+.pixelStyle{
+    border: .5px solid gainsboro;
 }
 
 /* Footer */

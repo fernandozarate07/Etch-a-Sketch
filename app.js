@@ -22,7 +22,8 @@ const drawDiv = document.querySelector('.drawDiv');
 
 // CreatePixelFunctionality
 
-const anchors = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961];const anchoContainer = 500;
+const anchors = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961];
+const anchoContainer = 500;
 const altoContainer = 500;
 
 const setAnchoredValue = (value) => {
@@ -39,7 +40,7 @@ const createPixel = () => {
     drawDiv.innerHTML = '';
     
     // updatePixelSize
-    const xyPixel = Math.floor(Math.sqrt((anchoContainer * altoContainer) / inputValue));
+    const xyPixel = Math.sqrt((anchoContainer * altoContainer) / inputValue);
     
     for (let i = 0; i < inputValue; i++) {
         let pixel = document.createElement('div');
