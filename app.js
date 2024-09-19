@@ -90,7 +90,7 @@ for (let color in colorButtons) {
 btnClear.addEventListener('click', ()=>{
     const pixels = drawDiv.querySelectorAll('.pixelStyle');
     pixels.forEach(pixel => {
-        pixel.style.backgroundColor = 'var(--transparent)';
+        pixel.style.background = 'var(--transparent)';
     });
 });
 
@@ -104,12 +104,12 @@ document.addEventListener('mouseup', () => {
 drawDiv.addEventListener('mousedown', (event) => {
     if (event.target.classList.contains('pixelStyle')) {
         isDrawing = true;
-        event.target.style.backgroundColor = colorVar;
+        event.target.style.background = colorVar;
     }
 });
 
 drawDiv.addEventListener('mousemove', (event) => {
     if (isDrawing && event.target.classList.contains('pixelStyle')) {
-        event.target.style.backgroundColor = colorVar;
+        event.target.style.background = colorVar;
     }
 });
