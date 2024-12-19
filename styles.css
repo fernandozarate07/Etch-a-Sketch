@@ -1,227 +1,232 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 :root {
-    --color-black: #000000;
-    --color-white: #FFFFFF;
-    --color-red: #FF0000;
-    --color-blue: #0000FF;
-    --color-green: #00FF00;
-    --color-yellow: #FFFF00;
-    --color-aqua: #00FFFF;
-    --color-magenta: #FF00FF;
-    --color-orange: #FFA500;
-    --color-grey: #808080;
-    --color-slate-blue: #6A5ACD;
-    --color-rainbow: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    --color-transparent: transparent;
+  --wh: #fefcfb;
+  --py: #1282a2;
+  --sc: #e3f2fd;
+  --bk: #051923;
+  --bk-op-2: rgba(0, 0, 0, 0.2);
+  --gr: #c0c0c0;
+
+  /* paint color  */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #ff0000;
+  --color-blue: #0000ff;
+  --color-green: #00ff00;
+  --color-yellow: #ffff00;
+  --color-aqua: #00ffff;
+  --color-magenta: #ff00ff;
+  --color-orange: #ffa500;
+  --color-grey: #808080;
+  --color-slate-blue: #6a5acd;
+  --color-rainbow: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  --color-transparent: transparent;
 }
 h1 {
-    font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
-/* Window */
+/* app*/
 
-#window{
-    width: 100vw;
-    height: 100vh;
-    padding-inline: 40px;
-    padding-block: 50px;
+#app {
+  width: 100vw;
+  height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background-color: #F5F5F5;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 20px;
+  background-color: var(--wh);
 }
 
 /* Title */
 
-#title{
-    text-align: center;
-    padding: 20px;
+#title {
+  text-align: center;
+  margin-inline: 200px;
+  padding-block: 20px;
+  color: var(--py);
 }
 
 /* DrawControlContainer */
 
-#drawControlContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+#drawControlContainer {
+  margin-inline: 200px;
+  padding: 20px;
 
-}
-.inputRangeDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-#buttomControlDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
 
+  background-color: var(--sc);
+  border-radius: 10px;
 }
-#buttomControlDiv button{
-    width: 85px;
-    height: 85px;
-    border: transparent;
-}
-.dccButtonCreate{
-    background-color: #2ECC71;
-    color: var(--color-white);
-}
-.dccButtonClear{
-    background-color: #E74C3C;
-    color: var(--color-white);
+.inputRangeDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
+  text-align: center;
+}
+#buttomControlDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#buttomControlDiv button {
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+}
+.dccButtonCreate {
+  background-color: var(--py);
+  color: var(--wh);
+  border: none;
+}
+.dccButtonClear {
+  color: var(--bk);
+  background-color: var(--bk-op-2);
+  border: none;
 }
 /* ColorTools */
 
-#colorTools{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#colorTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.indicadorContainer{
-    width: 85px;
-    height: 85px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.indicadorContainer {
+  width: 90px;
+  height: 90px;
 
-    border: 2px solid #BDC3C7;
-    background-color: var(--color-white);
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.indicador{
-    width: 50px;
-    height: 50px;
-    background-color: var(--color-black);
-    
-}
-.colorDiv{
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-
+  border-radius: 10px;
+  background-color: var(--bk-op-2);
 }
 
-.color{
-    width: 40px;
-    height: 40px;
+.indicador {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-black);
+  border-radius: 10px;
+}
+.colorDiv {
+  max-width: 300px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.color {
+  width: 40px;
+  height: 40px;
 
-    border: 2px solid #BDC3C7;
+  border-radius: 10px;
+
+  border: none;
 }
 /* colors */
-.colorBlack{
-    background-color: var(--color-black);
+.colorBlack {
+  background-color: var(--color-black);
 }
-.colorWhite{
-    background-color: var(--color-white);
+.colorWhite {
+  background-color: var(--color-white);
 }
-.colorRed{
-    background-color: var(--color-red);
+.colorRed {
+  background-color: var(--color-red);
 }
-.colorBlue{
-    background-color: var(--color-blue);
+.colorBlue {
+  background-color: var(--color-blue);
 }
-.colorGreen{
-    background-color: var(--color-green);
+.colorGreen {
+  background-color: var(--color-green);
 }
-.colorYellow{
-    background-color: var(--color-yellow);
+.colorYellow {
+  background-color: var(--color-yellow);
 }
-.colorAqua{
-    background-color: var(--color-aqua);
+.colorAqua {
+  background-color: var(--color-aqua);
 }
-.colorMagenta{
-    background-color: var(--color-magenta);
+.colorMagenta {
+  background-color: var(--color-magenta);
 }
-.colorOrange{
-    background-color: var(--color-orange);
+.colorOrange {
+  background-color: var(--color-orange);
+}
+.colorGrey {
+  background-color: var(--color-grey);
+}
+.colorSlateBlue {
+  background-color: var(--color-slate-blue);
+}
+.colorRainbow {
+  background: var(--color-rainbow);
+}
 
-}
-.colorGrey{
-    background-color: var(--color-grey);
-}
-.colorSlateBlue{
-    background-color: var(--color-slate-blue);
-}
-.colorRainbow{
-    background: var(--color-rainbow);
-}
+.eraser {
+  width: 90px;
+  height: 90px;
 
-.eraser{
-    width: 85px;
-    height: 85px;
-    background-color: #BDC3C7;
-    border: transparent;
+  background-color: var(--bk-op-2);
+  border: none;
+  border-radius: 10px;
 }
-.eraser i{
-    font-size: 2rem;
-    color: var(--color-white);
+.eraser i {
+  font-size: 2rem;
+  color: var(--bk);
 }
 
 /* DrawContainer */
 
-#drawContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+#drawContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-.drawDiv{
-    width: 500px;
-    height: 500px;
-    box-sizing: content-box;
-    overflow: hidden;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.drawDiv {
+  width: 500px;
+  height: 500px;
+  box-sizing: content-box;
+  overflow: hidden;
 
-    border: 1px solid #BDC3C7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border: 1px solid var(--bk);
 }
-.pixelStyle{
-    border: .5px solid #BDC3C7;
-    
+.pixelStyle {
+  border: 0.5px solid var(--bk-op-2);
 }
 
 /* Footer */
 
-#footer{
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translate(-50%, -50%); 
+#footer {
+  padding: 20px;
+  margin-inline: 200px;
 
-    height: 100vh;
-    width: 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #34495E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#footer p{
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 1.2rem;
-
-    color: var(--color-white);
+#footer p {
+  font-size: 0.75rem;
 }

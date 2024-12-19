@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400&display=swap">
-
-</head>
-<body>
-    <section id="window">
-        <h1 id="title">Etch a Sketch</h1>
-        <!-- DrawControlContainer -->
-        <div id="drawControlContainer">
-            <!-- InputRangeDiv -->
-            <div class="inputRangeDiv">
-                <h3 class="inputRangeDiv_h">Choose the number of pixels</h3>
-                <input type='range'class="inputRangeDiv_input" min="16" max="961" step="1" value="16">
-                <div class="inputRangeDiv_value"></div>
-            </div>
-            <div id="buttomControlDiv">
-                <button class="dccButtonCreate">CREATE</button>
-                <button class="dccButtonClear">CLEAR</button>
-            </div>
-            <!-- ColorTools -->
-            <div id="colorTools">
-                <div class="indicadorContainer">
-                    <div class="indicador"></div>
-                </div>
-                <div class="colorDiv">
-                    <button class="color colorBlack" data-color="var(--color-black)"></button>
-                    <button class="color colorWhite" data-color="var(--color-white)"></button>
-                    <button class="color colorRed" data-color="var(--color-red)"></button>
-                    <button class="color colorBlue" data-color="var(--color-blue)"></button>
-                    <button class="color colorGreen" data-color="var(--color-green)"></button>
-                    <button class="color colorYellow" data-color="var(--color-yellow)"></button>
-                    <button class="color colorAqua" data-color="var(--color-aqua)"></button>
-                    <button class="color colorMagenta" data-color="var(--color-magenta)"></button>
-                    <button class="color colorOrange" data-color="var(--color-orange)"></button>
-                    <button class="color colorGrey" data-color="var(--color-grey)"></button>
-                    <button class="color colorSlateBlue" data-color="var(--color-slate-blue)"></button>
-                    <button class="color colorRainbow" data-color="var(--color-rainbow)"></button>                                    
-                </div>
-                <button class="eraser" data-color="var(--color-transparent)">
-                    <i class="fa-solid fa-eraser"></i>
-                </button>
-            </div>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400&display=swap" />
+  </head>
+  <body>
+    <section id="app">
+      <h1 id="title">Etch a Sketch</h1>
+      <!-- DrawControlContainer -->
+      <div id="drawControlContainer">
+        <!-- InputRangeDiv -->
+        <div class="inputRangeDiv">
+          <h3 class="inputRangeDiv_h">Choose the number of pixels</h3>
+          <input type="range" class="inputRangeDiv_input" min="16" max="961" step="1" value="16" />
+          <div class="inputRangeDiv_value"></div>
         </div>
-        <!-- DrawContainer -->
-        <div id="drawContainer">
-            <div class="drawDiv"></div>
+        <div id="buttomControlDiv">
+          <button class="dccButtonCreate">CREATE</button>
+          <button class="dccButtonClear">CLEAR</button>
         </div>
-    <footer id="footer">
-        <p>© 2024. For the OdinProyect</p>
-    </footer>
-<!-- Script -->
- <script src="app.js"></script>
-</body>
+        <!-- ColorTools -->
+        <div id="colorTools">
+          <div class="indicadorContainer">
+            <div class="indicador"></div>
+          </div>
+          <div class="colorDiv">
+            <button class="color colorBlack" data-color="var(--color-black)"></button>
+            <button class="color colorWhite" data-color="var(--color-white)"></button>
+            <button class="color colorRed" data-color="var(--color-red)"></button>
+            <button class="color colorBlue" data-color="var(--color-blue)"></button>
+            <button class="color colorGreen" data-color="var(--color-green)"></button>
+            <button class="color colorYellow" data-color="var(--color-yellow)"></button>
+            <button class="color colorAqua" data-color="var(--color-aqua)"></button>
+            <button class="color colorMagenta" data-color="var(--color-magenta)"></button>
+            <button class="color colorOrange" data-color="var(--color-orange)"></button>
+            <button class="color colorGrey" data-color="var(--color-grey)"></button>
+            <button class="color colorSlateBlue" data-color="var(--color-slate-blue)"></button>
+            <button class="color colorRainbow" data-color="var(--color-rainbow)"></button>
+          </div>
+          <button class="eraser" data-color="var(--color-transparent)">
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+        </div>
+      </div>
+      <!-- DrawContainer -->
+      <div id="drawContainer">
+        <div class="drawDiv"></div>
+      </div>
+      <!-- footer -->
+      <footer id="footer">
+        <p>&copy; <span id="currentYear"></span> FERNANDO ZÁRATE</p>
+      </footer>
+    </section>
+    <!-- Script -->
+    <script src="app.js"></script>
+  </body>
 </html>
