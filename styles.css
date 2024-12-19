@@ -45,27 +45,29 @@ button {
   grid-template-rows: auto auto 1fr auto;
   gap: 20px;
   background-color: var(--wh);
+  /* background-color: red; */
 }
 
 /* Title */
 
 #title {
-  text-align: center;
-  margin-inline: 200px;
+  margin-inline: auto;
   padding-block: 20px;
+
+  text-align: center;
   color: var(--py);
 }
 
 /* DrawControlContainer */
 
 #drawControlContainer {
-  margin-inline: 200px;
+  margin-inline: auto;
   padding: 20px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
 
   background-color: var(--sc);
   border-radius: 10px;
@@ -86,8 +88,8 @@ button {
   gap: 10px;
 }
 #buttomControlDiv button {
-  width: 85px;
-  height: 85px;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
 }
 .dccButtonCreate {
@@ -109,8 +111,8 @@ button {
   gap: 10px;
 }
 .indicadorContainer {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
@@ -121,21 +123,22 @@ button {
 }
 
 .indicador {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: var(--color-black);
   border-radius: 10px;
 }
 .colorDiv {
   max-width: 300px;
+
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
+  gap: 5px;
 }
 .color {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 
   border-radius: 10px;
 
@@ -180,8 +183,8 @@ button {
 }
 
 .eraser {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
 
   background-color: var(--bk-op-2);
   border: none;
@@ -198,7 +201,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 }
 .drawDiv {
   width: 500px;
@@ -221,7 +223,7 @@ button {
 
 #footer {
   padding: 20px;
-  margin-inline: 200px;
+  margin-inline: auto;
 
   display: flex;
   justify-content: center;
@@ -229,4 +231,17 @@ button {
 }
 #footer p {
   font-size: 0.75rem;
+}
+/* Estilos para 576px */
+@media (max-width: 576px) {
+}
+/* Estilos para 992px */
+@media (max-width: 992px) {
+  #drawControlContainer {
+    flex-direction: column;
+  }
+  .drawDiv {
+    width: 250px;
+    height: 250px;
+  }
 }
