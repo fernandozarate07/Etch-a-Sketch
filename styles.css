@@ -234,14 +234,14 @@ button {
 }
 /* Estilos para 576px */
 @media (max-width: 576px) {
+  .drawDiv {
+    width: 250px;
+    height: 250px;
+  }
 }
 /* Estilos para 992px */
 @media (max-width: 992px) {
   #drawControlContainer {
     flex-direction: column;
-  }
-  .drawDiv {
-    width: 250px;
-    height: 250px;
   }
 }
